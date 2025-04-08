@@ -37,7 +37,7 @@
             </ul>
         </nav>
     </header>
-
+    
     <div class="content">
         <h2 class="section-title">Girls' Clothes</h2>
         <div class="product-grid">
@@ -45,52 +45,28 @@
                 <img src="images/girls%20jacket%20339x340.webp" alt="Girls' Jacket">
                 <h3>Girls' Jacket</h3>
                 <p>£59.99</p>
-                <button onclick="addToCart('Girls\' Jacket', 59.99)">Add to Cart</button>
+                <button onclick="addToCart('Girls\\' Jacket', 59.99)">Add to Cart</button>
             </div>
             <div class="product-card">
                 <img src="images/girls%20shoe.jpeg" alt="Girls' Shoes">
                 <h3>Girls' Shoes</h3>
                 <p>£39.99</p>
-                <button onclick="addToCart('Girls\' Shoes', 39.99)">Add to Cart</button>
+                <button onclick="addToCart('Girls\\' Shoes', 39.99)">Add to Cart</button>
             </div>
             <div class="product-card">
                 <img src="images/girls%20hiking%20boots.webp" alt="Girls' Hiking Boots">
                 <h3>Girls' Hiking Boots</h3>
                 <p>£69.99</p>
-                <button onclick="addToCart('Girls\' Hiking Boots', 69.99)">Add to Cart</button>
+                <button onclick="addToCart('Girls\\' Hiking Boots', 69.99)">Add to Cart</button>
             </div>
             <div class="product-card">
                 <img src="images/girl%20backpack.avif" alt="Girls' Backpack">
                 <h3>Girls' Backpack</h3>
                 <p>£49.99</p>
-                <button onclick="addToCart('Girls\' Backpack', 49.99)">Add to Cart</button>
+                <button onclick="addToCart('Girls\\' Backpack', 49.99)">Add to Cart</button>
             </div>
             <div class="product-card">
                 <img src="images/girls%20thermalwear.jpg"alt="Girls' Thermal Wear">
                 <h3>Girls' Thermal Wear</h3>
                 <p>£29.99</p>
-                <button onclick="addToCart('Girls\' Thermal Wear', 29.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/girl%20%20raincoat.jpg" alt="Girls' Raincoat">
-                <h3>Girls' Raincoat</h3>
-                <p>£34.99</p>
-                <button onclick="addToCart('Girls\' Raincoat', 34.99)">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2025 Contour Clothing. Gear up for greatness.
-    </footer>
-
-    <script>
-        function addToCart(product, price) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ product, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${product} added to cart!`);
-        }
-    </script>
-</body>
-</html>
+                <button onclick="addToCart('Girls\\' Thermal Wear', 29.99)">Add
