@@ -54,7 +54,7 @@
                 <!-- Cart items will be dynamically added here -->
             </tbody>
         </table>
-        <div class="total">Total: <span id="cart-total">$0.00</span></div>
+        <div class="total">Total: <span id="cart-total">£0.00</span></div>
         <button id="checkout-button">Checkout</button>
     </div>
 
@@ -76,15 +76,15 @@
                 let row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${item.product}</td>
-                    <td>$${item.price.toFixed(2)}</td>
+                    <td>£${item.price.toFixed(2)}</td>
                     <td>1</td>
-                    <td>$${itemTotal.toFixed(2)}</td>
+                    <td>£${itemTotal.toFixed(2)}</td>
                     <td><button onclick="removeFromCart(${index})">Remove</button></td>
                 `;
                 cartItemsContainer.appendChild(row);
             });
 
-            cartTotal.innerText = `$${total.toFixed(2)}`;
+            cartTotal.innerText = `£${total.toFixed(2)}`;
         }
 
         function removeFromCart(index) {
