@@ -10,8 +10,6 @@
         nav ul { list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: center; }
         nav ul li { margin: 0 15px; }
         nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
-        
-        /* Update the background URL to your image in the images folder */
         .hero-banner { 
             background: url('images/background.avif') no-repeat center center; 
             background-size: cover; 
@@ -24,7 +22,6 @@
             font-size: 3rem; 
             font-weight: bold; 
         }
-
         .content { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         .section-title { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 8px; margin-bottom: 20px; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
@@ -43,8 +40,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="girls.html">Girls</a></li>
-                <li><a href="boys.html">Boys</a></li>
+                <li><a href="womens.html">Women's</a></li>
+                <li><a href="mens.html">Men's</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="cart.html">Cart</a></li>
@@ -52,50 +49,31 @@
             </ul>
         </nav>
     </header>
-    
-    <div class="hero-banner">Gear Up for Adventure</div>
-    
+
+    <div class="hero-banner">
+        Welcome to Contour Clothing
+    </div>
+
     <div class="content">
         <h2 class="section-title">Featured Products</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="images/Trailblazer%20Jacket.jpg" alt="Trailblazer Jacket">
-                <h3>Trailblazer Jacket</h3>
-                <p>£79.99</p>
-                <button onclick="addToCart('Trailblazer Jacket', 79.99)">Add to Cart</button>
+                <img src="images/womens%20jacket.jpg" alt="Women's Jacket">
+                <h3>Women's Jacket</h3>
+                <p>£59.99</p>
+                <button onclick="addToCart('Women's Jacket', 59.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/Summit%20ProBackpack.jfif" alt="Summit Pro Backpack">
-                <h3>Summit Pro Backpack</h3>
-                <p>£89.99</p>
-                <button onclick="addToCart('Summit Pro Backpack', 89.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/Explorer%20HikingBoots.jpg" alt="Explorer Hiking Boots">
-                <h3>Explorer Hiking Boots</h3>
-                <p>£109.99</p>
-                <button onclick="addToCart('Explorer Hiking Boots', 109.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/Camping%20FoodPacks.jpg" alt="Camping FoodPacks.">
-                <h3>Camping FoodPacks.</h3>
-                <p>£29.99</p>
-                <button onclick="addToCart('Camping FoodPacks.', 29.99)">Add to Cart</button>
+                <img src="images/mens%20shoes.jpg" alt="Men's Shoes">
+                <h3>Men's Shoes</h3>
+                <p>£39.99</p>
+                <button onclick="addToCart('Men's Shoes', 39.99)">Add to Cart</button>
             </div>
         </div>
     </div>
-    
+
     <footer>
         &copy; 2025 Contour Clothing. Gear up for greatness.
     </footer>
-    
-    <script>
-        function addToCart(product, price) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ product, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${product} added to cart!`);
-        }
-    </script>
 </body>
 </html>
