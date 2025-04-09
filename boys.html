@@ -67,11 +67,11 @@
     </footer>
 
     <script>
-        function addToCart(product, price) {
+         function addToCart(product, price) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ product, price, quantity: 1 }); // Ensure quantity is stored
+            cart.push({ product, price });
             localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${product} added to cart!`);
+            window.location.href = 'cart.html'; // Redirect to Cart page
         }
     </script>
 </body>
