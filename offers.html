@@ -27,8 +27,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="girls.html">Girls</a></li>
-                <li><a href="boys.html">Boys</a></li>
+                <li><a href="womens.html">Women's</a></li>
+                <li><a href="mens.html">Men's</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="cart.html">Cart</a></li>
@@ -41,19 +41,14 @@
         <h2 class="section-title">Exclusive Offers</h2>
         <div class="offer-grid">
             <div class="offer-card">
-                <h3>50% Off Jackets</h3>
-                <p>Get 50% off on all jackets. Limited time offer!</p>
-                <button onclick="addToCart('Discounted Jackets', 49.99)">Shop Now</button>
+                <h3>50% Off Men's Jackets</h3>
+                <p>Get 50% off on all men's jackets. Limited time offer!</p>
+                <button onclick="addToCart('Discounted Men's Jackets', 49.99)">Shop Now</button>
             </div>
             <div class="offer-card">
-                <h3>Buy 1 Get 1 Free Shoes</h3>
-                <p>Buy any pair of shoes and get another pair free.</p>
-                <button onclick="addToCart('Shoes Sale', 79.99)">Shop Now</button>
-            </div>
-            <div class="offer-card">
-                <h3>30% Off Backpacks</h3>
-                <p>Enjoy a 30% discount on all backpacks.</p>
-                <button onclick="addToCart('Backpack Sale', 34.99)">Shop Now</button>
+                <h3>30% Off Women's Shoes</h3>
+                <p>Save on women's shoes this weekend only!</p>
+                <button onclick="addToCart('Discounted Women's Shoes', 27.99)">Shop Now</button>
             </div>
         </div>
     </div>
@@ -61,14 +56,5 @@
     <footer>
         &copy; 2025 Contour Clothing. Gear up for greatness.
     </footer>
-
-    <script>
-        function addToCart(product, price) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ product, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${product} added to cart!`);
-        }
-    </script>
 </body>
 </html>
