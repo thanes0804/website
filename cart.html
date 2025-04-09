@@ -13,12 +13,11 @@
         .content { max-width: 800px; margin: 40px auto; padding: 0 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .content h2 { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 8px; margin-bottom: 20px; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        table, th, td { border: 1px solid #ccc; }
-        th, td { padding: 10px; text-align: left; }
-        th { background-color: #f4f4f4; }
+        table th, table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        table th { background-color: #2c3e50; color: white; }
         .total { text-align: right; font-size: 1.2em; margin-top: 20px; }
-        button { background-color: #27ae60; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; }
-        button:hover { background-color: #219150; }
+        .checkout-btn { background-color: #27ae60; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; text-align: right; }
+        .checkout-btn:hover { background-color: #219150; }
         footer { background-color: #2c3e50; color: #fff; text-align: center; padding: 20px; margin-top: 40px; }
     </style>
 </head>
@@ -28,8 +27,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="womens.html">Women's</a></li>
-                <li><a href="mens.html">Men's</a></li>
+                <li><a href="girls.html">Girls</a></li>
+                <li><a href="boys.html">Boys</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="cart.html">Cart</a></li>
@@ -47,14 +46,64 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
-                    <th>Remove</th>
                 </tr>
             </thead>
             <tbody id="cart-items">
-                <!-- Cart items will be dynamically added here -->
+                <!-- Items will be dynamically added here -->
             </tbody>
         </table>
-        <div class="total">Total: <span id="cart-total">£0.00</span></div>
+        <div class="total">
+            Grand Total: <span id="grand-total">£0.00</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
     </div>
+
+    <footer>
+        &copy; 2025 Contour Clothing. Gear up for greatness.
+    </footer>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = document.getElementById('cart-items');
+            const grandTotal = document.getElementById('grand-total');
+            let total = 0;
+
+            cartItems.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                const row = document.createElement('tr');
+                const itemTotal = item.price * (item.quantity || 1);
+                total += itemTotal;
+
+                row.innerHTML = `
+                    <td>${item.product}</td>
+                    <td>£${item.price.toFixed(2)}</td>
+                    <td><input type="number" value="${item.quantity || 1}" min="1" onchange="updateQuantity(${index}, this.value)"></td>
+                    <td>£${itemTotal.toFixed(2)}</td>
+                `;
+
+                cartItems.appendChild(row);
+            });
+
+            grandTotal.textContent = `£${total.toFixed(2)}`;
+        }
+
+        function updateQuantity(index, quantity) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity = parseInt(quantity, 10);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function checkout() {
+            alert('Checkout complete! Thank you for shopping with us.');
+            localStorage.removeItem('cart');
+            loadCart();
+        }
+
+        // Load the cart on page load
+        window.onload = loadCart;
+    </script>
 </body>
 </html>
