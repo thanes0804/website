@@ -107,5 +107,14 @@
     <footer>
         <p>&copy; 2025 Contour Clothing. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function addToCart(product, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ product, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'cart.html'; // Redirect to the cart page
+        }
+    </script>
 </body>
 </html>
