@@ -37,75 +37,51 @@
             </ul>
         </nav>
     </header>
-    
+
     <div class="content">
         <h2 class="section-title">Girls' Clothes</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="images/girls%20jacket%20339x340.webp" alt="Girls' Jacket">
+                <img src="https://source.unsplash.com/400x400/?girls-jacket" alt="Girls' Jacket">
                 <h3>Girls' Jacket</h3>
-                <p>£59.99</p>
-                <button onclick="addToCart('Girls\\' Jacket', 59.99)">Add to Cart</button>
+                <p>$59.99</p>
+                <button onclick="addToCart('Girls\' Jacket', 59.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/girls%20shoe.jpeg" alt="Girls' Shoes">
+                <img src="https://source.unsplash.com/400x400/?girls-shoes" alt="Girls' Shoes">
                 <h3>Girls' Shoes</h3>
-                <p>£39.99</p>
-                <button onclick="addToCart('Girls\\' Shoes', 39.99)">Add to Cart</button>
+                <p>$39.99</p>
+                <button onclick="addToCart('Girls\' Shoes', 39.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/girls%20hiking%20boots.webp" alt="Girls' Hiking Boots">
+                <img src="https://source.unsplash.com/400x400/?girls-hiking-boots" alt="Girls' Hiking Boots">
                 <h3>Girls' Hiking Boots</h3>
-                <p>£69.99</p>
-                <button onclick="addToCart('Girls\\' Hiking Boots', 69.99)">Add to Cart</button>
+                <p>$69.99</p>
+                <button onclick="addToCart('Girls\' Hiking Boots', 69.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/girl%20backpack.avif" alt="Girls' Backpack">
+                <img src="https://source.unsplash.com/400x400/?girls-backpack" alt="Girls' Backpack">
                 <h3>Girls' Backpack</h3>
-                <p>£49.99</p>
-                <button onclick="addToCart('Girls\\' Backpack', 49.99)">Add to Cart</button>
+                <p>$49.99</p>
+                <button onclick="addToCart('Girls\' Backpack', 49.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/girls%20thermalwear.jpg" alt="Girls' Thermal Wear">
+                <img src="https://source.unsplash.com/400x400/?girls-thermal-wear" alt="Girls' Thermal Wear">
                 <h3>Girls' Thermal Wear</h3>
-                <p>£29.99</p>
-                <button onclick="addToCart('Girls\\' Thermal Wear', 29.99)">Add to Cart</button>
+                <p>$29.99</p>
+                <button onclick="addToCart('Girls\' Thermal Wear', 29.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/girl%20buckethat.jpg" alt="Girls' Bucket hat">
-                <h3>Girls' Bucket hat</h3>
-                <p>£15.99</p>
-                <button onclick="addToCart('Girls\\'  Bucket hat', 15.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/girl%20defencealarm.webp" alt="Girls'defence alarm">
-                <h3>Girls'defence alarm </h3>
-                <p>£24.00</p>
-                <button onclick="addToCart('Girls\\' defence alarm', 24.00)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/girl%20neckgaiter.jpg" alt="Girls' neck gaiter">
-                <h3>Girls' neck gaiter</h3>
-                <p>£17.00</p>
-                <button onclick="addToCart('Girls\\' neck gaiter', 17.00)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/girl%20pepperspray.webp" alt="Girls' pepper spray">
-                <h3>Girls'  pepper spray</h3>
-                <p>£19.99</p>
-                <button onclick="addToCart('Girls\\'  pepper spray', 19.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/girl%20sleepingbag.jpg" alt="Girls' sleeping bag">
-                <h3>Girls'  sleeping bag</h3>
-                <p>£30.00</p>
-                <button onclick="addToCart('Girls\\'  sleeping bag', 30.00)">Add to Cart</button>
+                <img src="https://source.unsplash.com/400x400/?girls-raincoat" alt="Girls' Raincoat">
+                <h3>Girls' Raincoat</h3>
+                <p>$34.99</p>
+                <button onclick="addToCart('Girls\' Raincoat', 34.99)">Add to Cart</button>
             </div>
         </div>
     </div>
-    
+
     <footer>
-        <p>&copy; 2025 Contour Clothing. All Rights Reserved.</p>
+        &copy; 2025 Contour Clothing. Gear up for greatness.
     </footer>
 
     <script>
@@ -113,7 +89,7 @@
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             cart.push({ product, price });
             localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = 'cart.html'; // Redirect to Cart page
+            alert(`${product} added to cart!`);
         }
     </script>
 </body>
