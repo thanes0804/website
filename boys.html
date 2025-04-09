@@ -38,71 +38,71 @@
         </nav>
     </header>
 
-    <div class="content">
+    <main class="content">
         <h2 class="section-title">Boys' Clothes</h2>
-        <div class="product-grid">
+        <section class="product-grid">
             <div class="product-card">
-                <img src="images/menbackpack.jpg" alt="Boys' Jacket">
+                <img src="images/menbackpack.jpg" alt="Stylish Boys' Jacket">
                 <h3>Boys' Jacket</h3>
                 <p>$59.99</p>
                 <button onclick="addToCart('Boys\' Jacket', 59.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/menhat.jpg" alt="Boys' Shoes">
+                <img src="images/menhat.jpg" alt="Comfortable Boys' Shoes">
                 <h3>Boys' Shoes</h3>
                 <p>$39.99</p>
                 <button onclick="addToCart('Boys\' Shoes', 39.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/menhikingboots.jpg alt="Boys' Hiking Boots">
+                <img src="images/menhikingboots.jpg" alt="Durable Boys' Hiking Boots">
                 <h3>Boys' Hiking Boots</h3>
                 <p>$69.99</p>
                 <button onclick="addToCart('Boys\' Hiking Boots', 69.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/menraincoat.webp" alt="Boys' Backpack">
+                <img src="images/menraincoat.webp" alt="Functional Boys' Backpack">
                 <h3>Boys' Backpack</h3>
                 <p>$49.99</p>
                 <button onclick="addToCart('Boys\' Backpack', 49.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/menshoe.jpeg" alt="Boys' Thermal Wear">
+                <img src="images/menshoe.jpeg" alt="Warm Boys' Thermal Wear">
                 <h3>Boys' Thermal Wear</h3>
                 <p>$29.99</p>
                 <button onclick="addToCart('Boys\' Thermal Wear', 29.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/mensweater.jpeg" alt="Boys' Raincoat">
+                <img src="images/mensweater.jpeg" alt="Waterproof Boys' Raincoat">
                 <h3>Boys' Raincoat</h3>
                 <p>$34.99</p>
                 <button onclick="addToCart('Boys\' Raincoat', 34.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/menthermalwear.jpg" alt="Boys' Hoodie">
+                <img src="images/menthermalwear.jpg" alt="Stylish Boys' Hoodie">
                 <h3>Boys' Hoodie</h3>
                 <p>$44.99</p>
                 <button onclick="addToCart('Boys\' Hoodie', 44.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/boys%20multitool.jpg" alt="Boys' Sweater">
+                <img src="images/boys%20multitool.jpg" alt="Cozy Boys' Sweater">
                 <h3>Boys' Sweater</h3>
                 <p>$39.99</p>
                 <button onclick="addToCart('Boys\' Sweater', 39.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/boys%20headlamp.webp" alt="Boys' Jeans">
+                <img src="images/boys%20headlamp.webp" alt="Trendy Boys' Jeans">
                 <h3>Boys' Jeans</h3>
                 <p>$49.99</p>
                 <button onclick="addToCart('Boys\' Jeans', 49.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/boys%20jacket.jpg" alt="Boys' Hat">
+                <img src="images/boys%20jacket.jpg" alt="Cool Boys' Hat">
                 <h3>Boys' Hat</h3>
                 <p>$19.99</p>
                 <button onclick="addToCart('Boys\' Hat', 19.99)">Add to Cart</button>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <footer>
         &copy; 2025 Contour Clothing. Gear up for greatness.
@@ -110,10 +110,15 @@
 
     <script>
         function addToCart(product, price) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ product, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${product} added to cart!`);
+            try {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({ product, price });
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${product} added to cart!`);
+            } catch (error) {
+                console.error('Error adding to cart:', error);
+                alert('Could not add item to cart. Please try again.');
+            }
         }
     </script>
 </body>
