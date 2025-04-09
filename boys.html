@@ -37,83 +37,41 @@
             </ul>
         </nav>
     </header>
-    
+
     <div class="content">
         <h2 class="section-title">Boys' Clothes</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="images/boys%20jacket.jpg" alt="Boys' Jacket">
+                <img src="https://source.unsplash.com/400x400/?boys-jacket" alt="Boys' Jacket">
                 <h3>Boys' Jacket</h3>
-                <p>£59.99</p>
-                <button onclick="addToCart('Boys\\' Jacket', 59.99)">Add to Cart</button>
+                <p>$59.99</p>
+                <button onclick="addToCart('Boys\' Jacket', 59.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/boys%20%20shoes.webp" alt="Boys' Shoes">
+                <img src="https://source.unsplash.com/400x400/?boys-shoes" alt="Boys' Shoes">
                 <h3>Boys' Shoes</h3>
-                <p>£39.99</p>
-                <button onclick="addToCart('Boys\\' Shoes', 39.99)">Add to Cart</button>
+                <p>$39.99</p>
+                <button onclick="addToCart('Boys\' Shoes', 39.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/boys%20%20hikingboots.jpg" alt="Boys' Hiking Boots">
+                <img src="https://source.unsplash.com/400x400/?boys-hiking-boots" alt="Boys' Hiking Boots">
                 <h3>Boys' Hiking Boots</h3>
-                <p>£69.99</p>
-                <button onclick="addToCart('Boys\\' Hiking Boots', 69.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/boys%20%20backpack.jpg" alt="Boys' Backpack">
-                <h3>Boys' Backpack</h3>
-                <p>£49.99</p>
-                <button onclick="addToCart('Boys\\' Backpack', 49.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/boys%20%20thermal%20wear.webp" alt="Boys' Thermal Wear">
-                <h3>Boys' Thermal Wear</h3>
-                <p>£29.99</p>
-                <button onclick="addToCart('Boys\\' Thermal Wear', 29.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/boys%20%20rain%20coat.webp" alt="Boys' Raincoat">
-                <h3>Boys' Raincoat</h3>
-                <p>£34.99</p>
-                <button onclick="addToCart('Boys\\' Raincoat', 34.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/boys%20headlamp.webp" alt="Boys' headlamp">
-                <h3>Boys' headlamp</h3>
-                <p>£22.00</p>
-                <button onclick="addToCart('Boys\\' headlamp', 22.00)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/boys%20%20sweater.jpg" alt="Boys' Sweater">
-                <h3>Boys' Sweater</h3>
-                <p>£39.99</p>
-                <button onclick="addToCart('Boys\\' Sweater', 39.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/boys%20multitool.jpg" alt="Boys, multitool">
-                <h3>Boys' multitool</h3>
-                <p>£17.99</p>
-                <button onclick="addToCart('Boys\\' multitool', 17.99)">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="images/boys%20%20hat.webp" alt="Boys' bucket Hat">
-                <h3>Boys' bucket Hat</h3>
-                <p>£15.99</p>
-                <button onclick="addToCart('Boys\\' bucket Hat', 15.99)">Add to Cart</button>
+                <p>$69.99</p>
+                <button onclick="addToCart('Boys\' Hiking Boots', 69.99)">Add to Cart</button>
             </div>
         </div>
     </div>
-    
+
     <footer>
         &copy; 2025 Contour Clothing. Gear up for greatness.
     </footer>
-    
+
     <script>
         function addToCart(product, price) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ product, price });
+            cart.push({ product, price, quantity: 1 }); // Ensure quantity is stored
             localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = 'cart.html'; // Redirect to the cart page
+            alert(`${product} added to cart!`);
         }
     </script>
 </body>
