@@ -40,8 +40,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="womens.html">Women's</a></li>
-                <li><a href="mens.html">Men's</a></li>
+                <li><a href="girls.html">Girls</a></li>
+                <li><a href="boys.html">Boys</a></li>
                 <li><a href="offers.html">Offers</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="cart.html">Cart</a></li>
@@ -58,16 +58,28 @@
         <h2 class="section-title">Featured Products</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="images/womens%20jacket.jpg" alt="Women's Jacket">
-                <h3>Women's Jacket</h3>
-                <p>£59.99</p>
-                <button onclick="addToCart('Women's Jacket', 59.99)">Add to Cart</button>
+                <img src="images/Camping%20FoodPacks.jpg" alt="Camping Food Packs">
+                <h3>Camping Food Packs</h3>
+                <p>£19.99</p>
+                <button onclick="addToCart('Camping Food Packs', 19.99)">Add to Cart</button>
             </div>
             <div class="product-card">
-                <img src="images/mens%20shoes.jpg" alt="Men's Shoes">
-                <h3>Men's Shoes</h3>
-                <p>£39.99</p>
-                <button onclick="addToCart('Men's Shoes', 39.99)">Add to Cart</button>
+                <img src="images/Trailblazer%20Jacket.jpg" alt="Trailblazer Jacket">
+                <h3>Trailblazer Jacket</h3>
+                <p>£59.99</p>
+                <button onclick="addToCart('Trailblazer Jacket', 59.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Summit%20ProBackpack.jfif" alt="Summit Pro Backpack">
+                <h3>Summit Pro Backpack</h3>
+                <p>£49.99</p>
+                <button onclick="addToCart('Summit Pro Backpack', 49.99)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Explorer%20HikingBoots.jpg" alt="Explorer Hiking Boots">
+                <h3>Explorer Hiking Boots</h3>
+                <p>£69.99</p>
+                <button onclick="addToCart('Explorer Hiking Boots', 69.99)">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -75,5 +87,13 @@
     <footer>
         &copy; 2025 Contour Clothing. Gear up for greatness.
     </footer>
+
+    <script>
+        function addToCart(product, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ product, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    </script>
 </body>
 </html>
